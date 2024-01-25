@@ -5,7 +5,7 @@ function Footer(){
                 Plazo Fijo Online
             </h2>
             <p className="text-center">
-                ATENCIÓN: La tasa del plazo fijo informada en esta simulación es la establecida por la Com. "A" 7822 del BCRA.
+                {`ATENCIÓN: La tasa del plazo fijo informada en esta simulación es la establecida por la Com. "A" 7822 del BCRA.`}
             </p>
         </footer>
     )
