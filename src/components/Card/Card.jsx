@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 function Card({ result, fechaActual }) {
     return (
         <div className="flex flex-col sm:flex-row gap-4 border-t-4 border-solid border-cyan-700 bg-blue-100">
             <div className="sm:w-1/2 m-4">
-                <img src="plazo-fijo.png"
+                <Image 
+                    unoptimized
+                    src="plazo-fijo.png"
                     alt="Image"
                     className="object-cover w-full h-full rounded-lg border-2 border-sky-900" />
             </div>

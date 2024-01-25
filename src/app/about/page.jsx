@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function AboutPage() {
     return (
         <section className="bg-teal-950">
@@ -14,19 +16,19 @@ function AboutPage() {
                 </div>
                 <div className="flex flex-col md:flex-row justify-center py-4">
                     <div className="flex flex-col items-center my-2 sm:my-4 mx-4 border-solid border-2 border-sky-500 rounded-md p-2 bg-sky-950">
-                        <img className="object-center w-24 h-24" src="nextjs.png" alt="Next.js" />
+                        <Image unoptimized className="object-center w-24 h-24" src="nextjs.png" alt="Next.js" />
                         <h1 className="text-slate-200 text-sm pt-2 sm:pt-0">Next.js</h1>
                     </div>
                     <div className="flex flex-col items-center my-2 sm:my-4 mx-4 border-solid border-2 border-sky-500 rounded-md p-2 bg-sky-950">
-                        <img className="object-center w-24 h-24" src="react.png" alt="React" />
+                        <Image unoptimized className="object-center w-24 h-24" src="react.png" alt="React" />
                         <h1 className="text-slate-200 text-sm pt-2 sm:pt-0">React</h1>
                     </div>
                     <div className="flex flex-col items-center my-2 sm:my-4 mx-4 border-solid border-2 border-sky-500 rounded-md p-2 bg-sky-950">
-                        <img className="object-center w-24 h-24" src="javascript.png" alt="JavaScript" />
+                        <Image unoptimized className="object-center w-24 h-24" src="javascript.png" alt="JavaScript" />
                         <h1 className="text-slate-200 text-sm pt-2 sm:pt-0">JavaScript</h1>
                     </div>
                     <div className="flex flex-col items-center my-2 sm:my-4 mx-4 border-solid border-2 border-sky-500 rounded-md p-2 bg-sky-950">
-                        <img className="object-center w-24 h-24" src="tailwind-css.png" alt="Tailwind CSS" />
+                        <Image unoptimized className="object-center w-24 h-24" src="tailwind-css.png" alt="Tailwind CSS" />
                         <h1 className="text-slate-200 text-sm pt-2 sm:pt-0">Tailwind CSS</h1>
                     </div>
                 </div>
