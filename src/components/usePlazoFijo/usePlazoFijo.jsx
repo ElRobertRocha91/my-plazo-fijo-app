@@ -21,7 +21,7 @@ function usePlazoFijo() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch("http://localhost:3000/api");
+                const res = await fetch("/api");
 
                 if (!res.ok) {
                     throw new Error("Failed to fetch data");
