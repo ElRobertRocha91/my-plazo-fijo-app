@@ -27,7 +27,7 @@ function usePlazoFijo() {
                     throw new Error("Failed to fetch data");
                 }
 
-                const data =  await res.json();
+                const data = await res.json();
                 // console.log(data);
                 setDataApi(data);
             } catch (error) {
@@ -72,7 +72,7 @@ function usePlazoFijo() {
     const calculateInterest = (dias) => {
         const tna = plazoFijo === "pesos" ? TNA_$ : TNA_U$D;
         const montoNumerico = parseInt(monto);
-        
+
         if (dias >= 30 && dias < 60) {
             const tnm = tna / 12;
             const interesGanado = parseFloat(((montoNumerico * tnm) / numCien).toFixed(2));
@@ -83,11 +83,11 @@ function usePlazoFijo() {
             return interesGanado;
         } else if (dias >= 90 && dias < 120) {
             const tnm = tna / 4;
-            const interesGanado = parseFloat(((monto * tnm) / numCien).toFixed(2));           
+            const interesGanado = parseFloat(((monto * tnm) / numCien).toFixed(2));
             return interesGanado;
         } else if (dias >= 120 && dias <= 365) {
             const tnm = tna / 2;
-            const interesGanado = parseFloat(((monto * tnm) / numCien).toFixed(2));            
+            const interesGanado = parseFloat(((monto * tnm) / numCien).toFixed(2));
             return interesGanado;
         }
     }
@@ -96,14 +96,20 @@ function usePlazoFijo() {
     const handleCalculate = (dias) => {
         const diasNumerico = parseInt(dias);
         const montoNumerico = parseFloat(monto);
-        
+
         //Validación
-        if ( plazoFijo === "pesos" && montoNumerico < 1000) {
-            alert("El monto minimo permitido es de $ 1.000");
-            //Con return me aseguro que se detenga la ejecución de la función.
+        //Con return me aseguro que se detenga la ejecución de la función.
+        if (diasNumerico > 365) {
+            alert("El plazo máximo de constitución del plazo fijo es de 365 días");
             return;
-        }else if(plazoFijo === "dolares" && montoNumerico < 100){
-            alert("El monto minimo permitido es de U$S 100");
+        } else if (diasNumerico < 30) {
+            alert("El plazo mínimo de constitución del plazo fijo es de 30 días");
+            return;
+        } else if (plazoFijo === "pesos" && montoNumerico < 1000) {
+            alert("El monto mínimo permitido es de $ 1.000");   
+            return;
+        } else if (plazoFijo === "dolares" && montoNumerico < 100) {
+            alert("El monto mínimo permitido es de U$S 100");
             return;
         }
         //Calcula los intereses y el capital invertido.
