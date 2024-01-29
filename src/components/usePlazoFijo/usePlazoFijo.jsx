@@ -117,7 +117,7 @@ function usePlazoFijo() {
         const montoFinal = parseFloat(monto) + parseFloat(intereses);
 
         //Calculamos la fecha de finalización del plazo fijo
-        const nuevaFechaFinalización = new Date();
+        const nuevaFechaFinalización = fechaActual;
         nuevaFechaFinalización.setDate(nuevaFechaFinalización.getDate() + dias);
 
         setFechaActual(nuevaFechaFinalización);
