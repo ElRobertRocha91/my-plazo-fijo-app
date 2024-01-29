@@ -122,7 +122,7 @@ function usePlazoFijo() {
         const nuevaFechaFinalización = new Date();
         nuevaFechaFinalización.setDate(nuevaFechaFinalización.getDate() + dias);
 
-        setFechaActual(nuevaFechaFinalización);
+        setFechaActual(nuevaFechaFinalización.toLocaleDateString());
 
         const TNA = plazoFijo === "pesos" ? TNA_$ : TNA_U$D;
         setResult({ TNA, intereses, montoFinal });
