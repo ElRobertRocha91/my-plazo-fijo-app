@@ -14,7 +14,7 @@ function usePlazoFijo() {
         intereses: 0,
         montoFinal: 0
     });
-    const [fechaActual, setFechaActual] = useState(new Date());
+    const [fechaActual, setFechaActual] = useState(null);
     const [inputMasDias, setInputMasDias] = useState(false);
     const [cantidadDias, setCantidadDias] = useState(30);
 
@@ -36,6 +36,8 @@ function usePlazoFijo() {
         };
         //Invocamos cuando se monte el componente.
         getData();
+        // Formateo la fecha en useEffect => Solución a Error de Hidratación
+        setFechaActual(new Date().toLocaleDateString());
     }, []);
 
     //Actualizamos el estado cuando el cliente seleccione el tipo de plazo fijo a simular.
@@ -117,7 +119,7 @@ function usePlazoFijo() {
         const montoFinal = parseFloat(monto) + parseFloat(intereses);
 
         //Calculamos la fecha de finalización del plazo fijo
-        const nuevaFechaFinalización = fechaActual;
+        const nuevaFechaFinalización = new Date();
         nuevaFechaFinalización.setDate(nuevaFechaFinalización.getDate() + dias);
 
         setFechaActual(nuevaFechaFinalización);

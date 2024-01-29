@@ -31,7 +31,7 @@ function Card({ result, fechaActual }) {
                 </div>
                 <div className="font-mono p-4">
                     <p>Hasta el</p>
-                    <p>{fechaActual.toLocaleDateString()}</p>
+                    <p>{fechaActual}</p>
                 </div>
 
             </div>
