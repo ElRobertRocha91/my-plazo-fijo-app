@@ -62,8 +62,18 @@ function Navbar() {
             {isOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link href="/" className="text-slate-300 block text-center no-underline hover:text-slate-200">Home</Link>
-                        <Link href="/about" className="text-slate-300 block text-center no-underline hover:text-slate-200">About</Link>
+                        <Link href="/" 
+                        className="text-slate-300 block text-center no-underline hover:text-slate-200"
+                        onClick={toggleMenu}
+                        >
+                            Home
+                        </Link>
+                        <Link href="/about" 
+                        className="text-slate-300 block text-center no-underline hover:text-slate-200"
+                        onClick={toggleMenu}
+                        >
+                            About
+                        </Link>
                     </div>
                 </div>
             )}
