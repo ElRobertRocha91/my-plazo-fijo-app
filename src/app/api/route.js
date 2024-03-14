@@ -5,7 +5,7 @@ export async function GET(request){
     return NextResponse.json({ tasas:
         [ {
             name: "pesos",
-            TNA: 110
+            TNA: 70
         },
         {
             name: "dolares",
